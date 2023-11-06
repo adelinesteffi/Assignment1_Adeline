@@ -17,6 +17,8 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
     Button Five;
     Button Six;
     Button Seven;
+
+    Button Eight, Nine,Zero;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
