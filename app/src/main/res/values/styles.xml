@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CalculatorButton">
+        <item name="android:layout_width">0dp</item> <!-- Set width to 0dp for equal width with weights -->
+        <item name="android:layout_height">wrap_content</item> <!-- Wrap content for height -->
+        <item name="android:layout_weight">1</item> <!-- Equal weight for all buttons -->
+        <item name="android:background">@drawable/button_style</item> <!-- Custom pink background -->
+        <item name="android:textColor">#FFFFFF</item> <!-- Text color for the button text -->
+        <item name="android:textSize">18sp</item> <!-- Text size for the button text -->
+    </style>
+
+
+
+</resources>
