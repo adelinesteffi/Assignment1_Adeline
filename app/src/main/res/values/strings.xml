@@ -16,7 +16,9 @@
     <string name="_0">0</string>
     <string name="equalTo">=</string>
     <string name="division">/</string>
-    <string name="adavance_with_history">ADAVANCE - WITH HISTORY</string>
+    <string name="advance_with_history">ADVANCE - WITH HISTORY</string>
     <string name="assignment_1">Assignment 1</string>
     <string name="default_Value">0</string>
+    <string name="textViewString">""</string>
+    <string name="standard_no_history">Standard-No History</string>
 </resources>
