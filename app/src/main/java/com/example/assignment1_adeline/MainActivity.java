@@ -14,9 +14,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Calculator calObj = new Calculator();
-    MyApp myAppObj = new MyApp();
+    ArrayList<String> localhistory= new ArrayList<>();
+
+
+  //  MyApp myAppObj = new MyApp();
     //  ArrayList<String> history = new ArrayList<String>();
-    //boolean advanceHistoryFlag = false;
+    boolean advanceHistoryFlaglocal;
     boolean newExpression = false;
     EditText CalculateString;
     Button One;
@@ -34,8 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        CalculateString = findViewById(R.id.display);
+        localhistory=((MyApp)getApplication()).getHistory();
+                CalculateString = findViewById(R.id.display);
         One = findViewById(R.id.OneButton);
         Two = findViewById(R.id.TwoButton);
         Three = findViewById(R.id.ThreeButton);
@@ -112,9 +115,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String finalString = currentText + " = " + resultString;
                     Log.d("testing", "finalString in main " + finalString);
                     CalculateString.setText(finalString);
-                    if (myAppObj.advanceHistoryFlag) {
-                        myAppObj.history.add(finalString);
-                        String listString = String.join("\n", myAppObj.history);
+                    if (((MyApp)getApplication()).advanceHistoryFlag) {
+                        localhistory.add(finalString);
+                        String listString = String.join("\n", localhistory);
                         historyTextDisplay.setText(listString);
                     }
 
@@ -130,12 +133,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d("testing", "in reset btn clear");
                 CalculateString.setText("");
             }
-            if (clickedButton == AdvanceHistory && !myAppObj.advanceHistoryFlag) {
-                myAppObj.advanceHistoryFlag = true;
+            if (clickedButton == AdvanceHistory && !((MyApp)getApplication()).advanceHistoryFlag) {
+                ((MyApp)getApplication()).advanceHistoryFlag= true;
                 AdvanceHistory.setText(R.string.standard_no_history);
                 Log.d("testing", "in AdvanceHistory btn set trur ");
-            } else if (clickedButton == AdvanceHistory && myAppObj.advanceHistoryFlag) {
-                myAppObj.advanceHistoryFlag = false;
+            } else if (clickedButton == AdvanceHistory && ((MyApp)getApplication()).advanceHistoryFlag) {
+                ((MyApp)getApplication()).advanceHistoryFlag = false;
                 AdvanceHistory.setText(R.string.advance_with_history);
                 historyTextDisplay.setText("");
                 Log.d("testing", "in AdvanceHistory btn set false ");

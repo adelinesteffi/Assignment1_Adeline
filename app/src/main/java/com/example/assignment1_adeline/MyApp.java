@@ -6,7 +6,17 @@ import java.util.ArrayList;
 
 public class MyApp extends Application {
 
-    ArrayList<String> history = new ArrayList<String>();
+    public ArrayList<String> getHistory() {
+
+        return history;
+    }
+
+    public boolean isAdvanceHistoryFlag() {
+        return advanceHistoryFlag;
+    }
+
+    ArrayList<String> history;
     boolean advanceHistoryFlag = false;
+
 }
 
