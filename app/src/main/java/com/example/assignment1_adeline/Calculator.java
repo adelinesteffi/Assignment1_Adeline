@@ -15,7 +15,7 @@ public class Calculator extends AppCompatActivity  {
         Log.d("testing","in validate");
         // Define a regular expression pattern to match one-digit numbers and valid operators
        // String pattern = "^[0-9]([+\\-*/=][0-9])*[0-9]$"; // Matches one digit (0-9) followed by one of the operators +, -, *, /, =
-        String pattern = "^[0-9]([+\\-*/=][0-9])*$";
+        String pattern = "^[0-9]([+\\-*/][0-9])+([+\\-*/][0-9])*$";
         // Check if the input matches the pattern
         return input.matches(pattern);
     }
